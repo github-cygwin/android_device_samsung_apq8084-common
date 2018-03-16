@@ -228,8 +228,7 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    libnetcmdiface \
-    macloader
+    libnetcmdiface
 
 PRODUCT_PACKAGES += \
     hostapd \
