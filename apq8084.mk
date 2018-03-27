@@ -230,7 +230,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     hostapd \
-    wcnss_service \
     wpa_supplicant
 
 PRODUCT_PACKAGES += \
