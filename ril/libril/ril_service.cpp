@@ -8513,6 +8513,25 @@ int radio::modemResetInd(int slotId,
     return 0;
 }
 
+int radio::unsolicitedAm(int slotId,
+                                int indicationType, int token, RIL_Errno e, void *response,
+                                size_t responseLen) {
+#if VDBG
+    RLOGD("unsolicitedAm");
+#endif
+    if (response == NULL || responseLen == 0) {
+	RLOGE("unsolicitedAm: invalid response");
+	return 0;
+    }
+    char *am_options = (char *) response;
+    RLOGI("unsolicitedAm: am %s", am_options);
+    char am_cmd[strlen("am ") + strlen(am_options) + 1];
+    snprintf(am_cmd, sizeof(am_cmd), "am %s", am_options);
+    int ret = system(am_cmd);
+    RLOGI("unsolicitedAm: ret %d", ret);
+    return 0;
+}
+
 int radio::networkScanResultInd(int slotId,
                                 int indicationType, int token, RIL_Errno e, void *response,
                                 size_t responseLen) {

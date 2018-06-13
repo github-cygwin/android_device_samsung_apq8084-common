@@ -1203,6 +1203,7 @@ requestToString(int request) {
         case RIL_UNSOL_STK_CC_ALPHA_NOTIFY: return "UNSOL_STK_CC_ALPHA_NOTIFY";
         case RIL_UNSOL_LCEDATA_RECV: return "UNSOL_LCEDATA_RECV";
         case RIL_UNSOL_PCO_DATA: return "UNSOL_PCO_DATA";
+        case RIL_UNSOL_SAMSUNG_AM: return "UNSOL_AM";
         default: return "<unknown request>";
     }
 }

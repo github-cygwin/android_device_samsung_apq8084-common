@@ -7005,6 +7005,11 @@ typedef struct {
  */
 #define RIL_UNSOL_KEEPALIVE_STATUS 1050
 
+/* SAMSUNG ONLY, this is a mapping from the original RIL_UNSOL_AM 11010
+ * to a sane value inside the list of unsolicited responses.
+ */
+#define RIL_UNSOL_SAMSUNG_AM 1051
+
 /***********************************************************************/
 
 

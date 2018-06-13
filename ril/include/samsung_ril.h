@@ -15,5 +15,20 @@
 ** limitations under the License.
 */
 
-static inline void remapUnsol(int *unsol __unused) {
+#define RIL_UNSOL_AM 11010
+#define RIL_UNSOL_ON_SS_LL 11055
+
+static inline void remapUnsol(int *unsol) {
+    if (!unsol)
+        return;
+    switch (*unsol) {
+        case RIL_UNSOL_AM:
+            RLOGI("remapUnsol: Map RIL_UNSOL_AM %d to RIL_UNSOL_SAMSUNG_AM %d", RIL_UNSOL_AM, RIL_UNSOL_SAMSUNG_AM);
+            *unsol = RIL_UNSOL_SAMSUNG_AM;
+            break;
+        case RIL_UNSOL_ON_SS_LL:
+            RLOGI("remapUnsol: Map RIL_UNSOL_ON_SS_LL %d to RIL_UNSOL_ON_SS %d", RIL_UNSOL_ON_SS_LL, RIL_UNSOL_ON_SS);
+            *unsol = RIL_UNSOL_ON_SS;
+            break;
+    }
 }
